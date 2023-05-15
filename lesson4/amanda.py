@@ -14,6 +14,3 @@ for element in (info_str):
     key, value = element.split("=")
     dictionary[key] = value
 print(dictionary)
-
-
-
