@@ -1,5 +1,5 @@
 
-def check_fun(*args) -> bool:
+def all_fun(*args) -> bool:
     false_list = [False, ' ', 0, [], {}, None]
     result = True
     for argument in args:
@@ -22,17 +22,17 @@ case_for_false4 =[1,2,3, ['Tom'], {}]
 case_for_false5 =[None]
 
 if __name__ == "__main__":
-    result_for_true1 = (check_fun(*case_for_true1))
-    result_for_true2 = (check_fun(*case_for_true2))
-    result_for_true3 = (check_fun(*case_for_true3))
-    result_for_true4 = (check_fun(*case_for_true4))
-    result_for_true5 = (check_fun(*case_for_true5))
+    result_for_true1 = (all_fun(*case_for_true1))
+    result_for_true2 = (all_fun(*case_for_true2))
+    result_for_true3 = (all_fun(*case_for_true3))
+    result_for_true4 = (all_fun(*case_for_true4))
+    result_for_true5 = (all_fun(*case_for_true5))
 
-    result_for_false1 = (check_fun(*case_for_false1))
-    result_for_false2 = (check_fun(*case_for_false2))
-    result_for_false3 = (check_fun(*case_for_false3))
-    result_for_false4 = (check_fun(*case_for_false4))
-    result_for_false5 = (check_fun(*case_for_false5))
+    result_for_false1 = (all_fun(*case_for_false1))
+    result_for_false2 = (all_fun(*case_for_false2))
+    result_for_false3 = (all_fun(*case_for_false3))
+    result_for_false4 = (all_fun(*case_for_false4))
+    result_for_false5 = (all_fun(*case_for_false5))
 
     print(f'For the {case_for_true1} case, the result is {result_for_true1}')
     print(f'For the {case_for_true2} case, the result is {result_for_true2}')
