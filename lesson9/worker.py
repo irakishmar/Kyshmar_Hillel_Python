@@ -18,7 +18,10 @@ class Worker:
 
     @name.setter
     def name(self, new_name):
-        self.__name = new_name
+        if isinstance(new_name, str):
+            self.__name = new_name
+        else:
+            raise TypeError(f'Name of worker  should be a string')
 
     @property
     def birth_year(self):
@@ -26,7 +29,11 @@ class Worker:
 
     @birth_year.setter
     def birth_year(self, new_birth_year):
-        self.__birth_year = new_birth_year
+        if isinstance(new_birth_year, int) and 1953 <= new_birth_year <= 2005:
+            self.__birth_year = new_birth_year
+        else:
+            raise TypeError(
+                f'Birth year value should be an integer and the person should be between 18 and 60 years of age')
 
     @property
     def salary(self):
@@ -34,7 +41,11 @@ class Worker:
 
     @salary.setter
     def salary(self, new_salary):
-        self.__salary = new_salary
+        if isinstance(new_salary, int) and new_salary > 0:
+            self.__salary = new_salary
+        else:
+            raise TypeError(f'Salary value should be an integer and greater than 0')
+
 
     @classmethod
     def age_employee(cls, name: str, birth_year: int, salary: float):
