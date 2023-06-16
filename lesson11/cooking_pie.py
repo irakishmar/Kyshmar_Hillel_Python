@@ -21,7 +21,7 @@ class Pie(ICooking, IRecipe):
 
     # Polymorphism
 
-    def take_ingredients(self, milk: int, meal: int, egg: int, strawberry: int):
+    def _take_ingredients(self, milk: int, meal: int, egg: int, strawberry: int):
         if milk == 300 and meal == 400 and egg == 2:
             self.__plate = {
                 "milk": milk,
@@ -39,25 +39,25 @@ class Pie(ICooking, IRecipe):
             elif egg != 2:
                 print('You took the wrong amount of eggs.')
 
-    def mix_ingredients(self):
+    def _mix_ingredients(self):
         print(f'Please mix {self.__plate}')
 
-    def move_to_baking_dish(self):
+    def _move_to_baking_dish(self):
         print(f'Please move your ingredients in baking dish')
 
-    def open_oven(self):
+    def _open_oven(self):
         self.__is_open_oven = True
         print('Please open the oven')
 
-    def put_in_the_oven(self):
+    def _put_in_the_oven(self):
         self.__is_empty_oven = False
         print('Put ingredients in the oven')
 
-    def close_oven(self):
+    def _close_oven(self):
         self.__is_open_oven = False
         print('Please close the oven')
 
-    def turn_on_oven(self, oven_temperature: int):
+    def _turn_on_oven(self, oven_temperature: int):
         print('Turn on oven, set 200 degrees and wait 30 min')
         if oven_temperature > 180:
             print(
@@ -68,7 +68,7 @@ class Pie(ICooking, IRecipe):
         else:
             print('Good job!!')
 
-    def waiting(self):
+    def _waiting(self):
         time = 5
         while time != 0:
             if time > 1:
@@ -77,10 +77,10 @@ class Pie(ICooking, IRecipe):
                 print('The pie is ready')
             time -= 1
 
-    def take_out_from_the_oven(self):
+    def _take_out_from_the_oven(self):
         print('Take your pie out of the oven.Bon appetit!')
 
-    def turn_off_oven(self):
+    def _turn_off_oven(self):
         self.__oven_temperature = 0
         print('Please turn off your oven')
         print(
@@ -89,18 +89,18 @@ class Pie(ICooking, IRecipe):
 
     # Encapsulation
     def prepare_pie(self, milk: int, meal: int, egg: int, strawberry: int, oven_temperature: int):
-        self.take_ingredients(milk, meal, egg, strawberry)
-        self.mix_ingredients()
-        self.move_to_baking_dish()
-        self.open_oven()
-        self.put_in_the_oven()
-        self.close_oven()
-        self.turn_on_oven(oven_temperature)
-        self.waiting()
-        self.turn_off_oven()
-        self.open_oven()
-        self.take_out_from_the_oven()
-        self.close_oven()
+        self._take_ingredients(milk, meal, egg, strawberry)
+        self._mix_ingredients()
+        self._move_to_baking_dish()
+        self._open_oven()
+        self._put_in_the_oven()
+        self._close_oven()
+        self._turn_on_oven(oven_temperature)
+        self._waiting()
+        self._turn_off_oven()
+        self._open_oven()
+        self._take_out_from_the_oven()
+        self._close_oven()
 
 
 if __name__ == '__main__':
